@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Picklist Demo">
+        <div class="slds-var-p-around_smalll">
+            <template lwc:if={industryPicklist.data}>
+                <lightning-combobox class="slds-p-around_small" name="industry" label="Industry" value={value}
+                    placeholder="Select Industry" options={industryPicklist.data.values}
+                    onchange={handleChange}></lightning-combobox>
+            </template>
+        </div>
+        <div class="slds-var-p-around_smalll">
+            <template lwc:if={accountAllPicklist.data}>
+                <lightning-combobox class="slds-p-around_small" name="rating" label="Rating" placeholder="Select Rating"
+                    options={accountAllPicklist.data.picklistFieldValues.Rating.values}></lightning-combobox>
+            </template>
+        </div>
+        <div class="slds-var-p-around_smalll">
+            <template lwc:if={accountAllPicklist.data}>
+                <lightning-combobox class="slds-p-around_small" name="priority" label="Customer Priority"
+                    placeholder="Select Priority"
+                    options={accountAllPicklist.data.picklistFieldValues.CustomerPriority__c.values}></lightning-combobox>
+            </template>
+        </div>
+    </lightning-card>
+
+</template>
